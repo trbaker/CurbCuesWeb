@@ -1,0 +1,297 @@
+/* CurbCues — strictly achromatic, derived from the app's own palette.
+   The three tier shades are the exact button values from ContentView.swift. */
+
+:root {
+  --ink:    #000000;
+  --paper:  #ffffff;
+  --tier-1: #ffffff;   /* Intersection button, Color(white: 1.00) */
+  --tier-2: #c4c4c4;   /* Address button,      Color(white: 0.77) */
+  --tier-3: #8f8f8f;   /* Food Nearby button,  Color(white: 0.56) */
+  --dim:    #9a9a9a;
+  --dimmer: #8a8a8a;
+  --rule:   #262626;
+  --panel:  #0d0d0d;
+
+  --display: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN",
+             system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+
+  --measure: 34rem;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  font-size: clamp(1.0625rem, 0.98rem + 0.4vw, 1.1875rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Accessibility floor ---------- */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--paper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Layout ---------- */
+
+.wrap {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.band { padding-block: clamp(3.5rem, 9vw, 7rem); }
+.band + .band { border-top: 1px solid var(--rule); }
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-block: 1.5rem;
+}
+
+.mark { width: 44px; height: 44px; flex: none; display: block; }
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--paper);
+}
+
+.masthead nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.masthead nav a { color: var(--dim); text-decoration: none; }
+.masthead nav a:hover { color: var(--paper); text-decoration: underline; }
+
+/* ---------- Hero: the announcement is the thesis ---------- */
+
+.hero { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(3rem, 8vw, 6rem); }
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dimmer);
+  margin: 0 0 1.75rem;
+}
+
+/* The app's real output, set as the largest thing on the page. */
+.utterance {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2rem, 1rem + 5.2vw, 4.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.utterance .said { color: var(--dimmer); }
+
+.lede {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.4375rem);
+  line-height: 1.5;
+  color: var(--tier-2);
+  max-width: var(--measure);
+  margin: 2rem 0 0;
+}
+
+/* Speech unfolds in time — the one motion moment on the site. */
+@media (prefers-reduced-motion: no-preference) {
+  .utterance > span {
+    display: inline-block;
+    opacity: 0;
+    animation: speak 0.5s ease-out forwards;
+  }
+  .utterance > span:nth-child(1) { animation-delay: 0.10s; }
+  .utterance > span:nth-child(2) { animation-delay: 0.34s; }
+  .utterance > span:nth-child(3) { animation-delay: 0.58s; }
+}
+
+@keyframes speak {
+  from { opacity: 0; transform: translateY(0.18em); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Buttons ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 1.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 3px solid var(--paper);
+}
+
+.btn-solid { background: var(--paper); color: var(--ink); }
+.btn-solid:hover { background: var(--tier-2); border-color: var(--tier-2); }
+
+.btn-hollow { background: transparent; color: var(--paper); }
+.btn-hollow:hover { background: #1a1a1a; }
+
+/* ---------- Tiers: brightness order mirrors the app's buttons ---------- */
+
+.tier {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-block: clamp(2rem, 4vw, 2.75rem);
+}
+.tier + .tier { border-top: 1px solid var(--rule); }
+
+.tier-bar { border-radius: 5px; }
+.tier-1 .tier-bar { background: var(--tier-1); }
+.tier-2 .tier-bar { background: var(--tier-2); }
+.tier-3 .tier-bar { background: var(--tier-3); }
+
+.tier h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.125rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.625rem;
+}
+.tier-1 h3 { color: var(--tier-1); }
+.tier-2 h3 { color: var(--tier-2); }
+.tier-3 h3 { color: var(--tier-3); }
+
+.tier p { margin: 0 0 1.125rem; max-width: var(--measure); color: var(--tier-2); }
+
+/* Sample announcement, quoted as speech rather than styled as code. */
+.sample {
+  font-family: var(--display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--paper);
+  border-left: 2px solid var(--rule);
+  padding: 0.25rem 0 0.25rem 1.125rem;
+  margin: 0;
+  max-width: var(--measure);
+}
+.sample::before { content: "\201C"; }
+.sample::after  { content: "\201D"; }
+
+/* ---------- Headings ---------- */
+
+h1, h2 { font-family: var(--display); letter-spacing: -0.025em; }
+
+.band-title {
+  font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+  font-weight: 800;
+  margin: 0 0 2.5rem;
+}
+
+.page-title {
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 0.75rem;
+}
+
+.updated { color: var(--dimmer); font-size: 0.9375rem; margin: 0 0 3rem; }
+
+/* ---------- Feature list ---------- */
+
+.features { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
+@media (min-width: 46rem) { .features { grid-template-columns: 1fr 1fr; gap: 1.75rem 3rem; } }
+
+.features li { border-top: 1px solid var(--rule); padding-top: 1.125rem; }
+.features strong {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  margin-bottom: 0.3125rem;
+}
+.features span { color: var(--dim); }
+
+/* ---------- Prose (privacy + support) ---------- */
+
+.prose { max-width: 40rem; }
+.prose h2 {
+  font-size: clamp(1.375rem, 1.1rem + 1.1vw, 1.75rem);
+  font-weight: 800;
+  margin: 3rem 0 0.875rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+.prose h2:first-of-type { margin-top: 0; }
+.prose h3 {
+  font-family: var(--display);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+}
+.prose p, .prose li { color: var(--tier-2); }
+.prose ul { padding-left: 1.25rem; }
+.prose li { margin-bottom: 0.625rem; }
+.prose a { color: var(--paper); }
+.prose strong { color: var(--paper); }
+
+.callout {
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* ---------- Footer ---------- */
+
+.foot {
+  border-top: 1px solid var(--rule);
+  padding-block: 3rem 4rem;
+  color: var(--dimmer);
+  font-size: 0.9375rem;
+}
+.foot nav { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+.foot a { color: var(--dim); }
+.foot p { margin: 0.5rem 0 0; max-width: var(--measure); }
+
+/* Lede sitting directly under a band title needs no extra top space. */
+.lede-tight { margin-top: 0; }

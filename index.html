@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CurbCues — Hear where you are</title>
+<meta name="description" content="An iPhone app for blind and low vision walkers. Three large buttons speak the nearest intersection, your street address, or the closest places to eat and shop.">
+<link rel="canonical" href="https://curbcues.app/">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="CurbCues — Hear where you are">
+<meta property="og:description" content="Three large buttons speak the nearest intersection, your street address, or the closest places to eat and shop.">
+<meta property="og:image" content="https://curbcues.app/assets/icon-512.png">
+<meta property="og:url" content="https://curbcues.app/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="wrap masthead">
+  <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="CurbCues logo: a map marker with sound radiating from it">
+    <mask id="pin-mask-a">
+      <rect width="100" height="100" fill="black"/>
+      <circle cx="50" cy="41.445" r="11.8" fill="white"/>
+      <polygon points="39.228,46.261 50,70.355 60.772,46.261" fill="white"/>
+      <circle cx="50" cy="41.445" r="4.72" fill="black"/>
+    </mask>
+    <rect width="100" height="100" fill="currentColor" mask="url(#pin-mask-a)"/>
+    <g fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="butt">
+      <path d="M65.234,36.283 A20.5,20.5 0 0 1 65.234,63.717"/>
+      <path d="M71.774,30.394 A29.3,29.3 0 0 1 71.774,69.606"/>
+      <path d="M78.091,24.707 A37.8,37.8 0 0 1 78.091,75.293"/>
+      <path d="M34.766,36.283 A20.5,20.5 0 0 0 34.766,63.717"/>
+      <path d="M28.226,30.394 A29.3,29.3 0 0 0 28.226,69.606"/>
+      <path d="M21.909,24.707 A37.8,37.8 0 0 0 21.909,75.293"/>
+    </g>
+  </svg>
+  <a class="wordmark" href="/">CurbCues</a>
+  <nav aria-label="Primary">
+    <a href="support/">Support</a>
+    <a href="privacy/">Privacy</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="wrap hero">
+    <p class="eyebrow">iPhone · Free · No account</p>
+    <h1 class="utterance">
+      <span>Nearest intersection:</span>
+      <span>Main Street and Twelfth Street,</span>
+      <span class="said">about 150 feet to your northeast, at your 2 o&rsquo;clock.</span>
+    </h1>
+    <p class="lede">
+      That is what CurbCues says when you press a button. Three large buttons fill
+      the screen. Press one and listen. There is no map to read, no menu to
+      navigate, and nothing to learn.
+    </p>
+    <div class="actions">
+      <a class="btn btn-solid" href="#appstore">Download on the App&nbsp;Store</a>
+      <a class="btn btn-hollow" href="support/">Read the guide</a>
+    </div>
+  </section>
+
+  <section class="wrap band" aria-labelledby="buttons-title">
+    <h2 class="band-title" id="buttons-title">Three buttons</h2>
+
+    <div class="tier tier-1">
+      <div class="tier-bar" aria-hidden="true"></div>
+      <div>
+        <h3>Intersection</h3>
+        <p>
+          The nearest street corner, with how far away it is and which way to walk.
+          When the compass is reliable, you also get a clock direction relative to
+          the way you are facing.
+        </p>
+        <p class="sample">Nearest intersection: Oak Street and Fourth Street, about 200 feet to your east, at your 3 o&rsquo;clock.</p>
+      </div>
+    </div>
+
+    <div class="tier tier-2">
+      <div class="tier-bar" aria-hidden="true"></div>
+      <div>
+        <h3>Address</h3>
+        <p>
+          The nearest building number and street name, then the number again one
+          digit at a time. Useful when you are reading your address to a driver, a
+          delivery, or a dispatcher and cannot afford to be misheard.
+        </p>
+        <p class="sample">Nearest address: 1204 Main Street, Kansas City, Missouri. Number: one, two, zero, four.</p>
+      </div>
+    </div>
+
+    <div class="tier tier-3">
+      <div class="tier-bar" aria-hidden="true"></div>
+      <div>
+        <h3>Food Nearby</h3>
+        <p>
+          The two or three closest restaurants, cafes, and grocery stores, each with
+          distance and direction. It starts with what is walkable and only widens the
+          search if nothing is close.
+        </p>
+        <p class="sample">Nearby: one, Franklin Market, a grocery store, about 300 feet to your southwest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap band" aria-labelledby="live-title">
+    <h2 class="band-title" id="live-title">Live mode</h2>
+    <p class="lede lede-tight">
+      Turn on Live and CurbCues repeats your last button automatically as you walk,
+      with a fresh location each time. Choose an update every 30 seconds, 1 minute,
+      or 2 minutes. The button that is repeating gets a white ring around it.
+    </p>
+  </section>
+
+  <section class="wrap band" aria-labelledby="built-title">
+    <h2 class="band-title" id="built-title">Built for listening</h2>
+    <ul class="features">
+      <li>
+        <strong>Heard, not seen</strong>
+        <span>Announcements play even when the ring switch is set to silent, and lower your music instead of stopping it.</span>
+      </li>
+      <li>
+        <strong>Honest about accuracy</strong>
+        <span>If the GPS signal is weak, CurbCues says so instead of reading out an answer it is not sure about.</span>
+      </li>
+      <li>
+        <strong>Speech speed you choose</strong>
+        <span>From 0.75x to 2x, with a spoken preview before you save it.</span>
+      </li>
+      <li>
+        <strong>Full VoiceOver support</strong>
+        <span>Every control is labelled, and every button carries a hint describing what it will say.</span>
+      </li>
+      <li>
+        <strong>High contrast by default</strong>
+        <span>Black and white throughout. No colour is ever the only way to tell two buttons apart.</span>
+      </li>
+      <li>
+        <strong>Nothing to sign up for</strong>
+        <span>No account, no tracking, no ads. Your location answers your question and is not stored.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap band" id="appstore" aria-labelledby="get-title">
+    <h2 class="band-title" id="get-title">Get CurbCues</h2>
+    <p class="lede lede-tight">
+      CurbCues is free on the App Store for iPhone.
+    </p>
+    <div class="actions">
+      <a class="btn btn-solid" href="#appstore">Download on the App&nbsp;Store</a>
+    </div>
+    <div class="callout">
+      <p>
+        <strong>CurbCues is a companion, not a substitute.</strong> It works alongside
+        a cane, a guide dog, and your own orientation and mobility training — it does
+        not replace any of them. Always use your own senses and judgment when crossing
+        streets.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap foot">
+  <nav aria-label="Footer">
+    <a href="/">Home</a>
+    <a href="support/">Support</a>
+    <a href="privacy/">Privacy</a>
+    <a href="https://tbaker.com">tbaker.com</a>
+  </nav>
+  <p>CurbCues is made by Tom Baker.</p>
+  <p>Intersection data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Address and place data from Apple Maps.</p>
+</footer>
+
+</body>
+</html>
