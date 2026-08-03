@@ -69,24 +69,41 @@ body {
 
 .masthead {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
-  padding-block: 1.5rem;
+  text-align: center;
+  gap: 1rem;
+  padding-block: clamp(2rem, 5vw, 3rem) 1.5rem;
 }
 
-.mark { width: 44px; height: 44px; flex: none; display: block; }
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--paper);
+}
+
+/* 300px on desktop, but never wider than the viewport allows on a phone. */
+.mark {
+  width: 300px;
+  max-width: 72vw;
+  height: auto;
+  display: block;
+  border-radius: 22%;   /* echoes the iOS home screen mask */
+}
 
 .wordmark {
   font-family: var(--display);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
   letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--paper);
 }
 
 .masthead nav {
-  margin-left: auto;
   display: flex;
   gap: 1.5rem;
   font-size: 0.95rem;
