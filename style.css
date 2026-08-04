@@ -312,3 +312,11 @@ h1, h2 { font-family: var(--display); letter-spacing: -0.025em; }
 
 /* Lede sitting directly under a band title needs no extra top space. */
 .lede-tight { margin-top: 0; }
+
+/* Deployment marker — bump this string to confirm a push actually went live. */
+.docversion {
+  margin: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+}

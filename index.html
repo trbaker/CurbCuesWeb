@@ -13,31 +13,19 @@
 <meta property="og:image" content="https://curbcues.app/assets/icon-512.png">
 <meta property="og:url" content="https://curbcues.app/">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to main content</a>
 
 <header class="wrap masthead">
-  <svg class="mark" viewBox="0 0 100 100" role="img" aria-label="CurbCues logo: a map marker with sound radiating from it">
-    <mask id="pin-mask-a">
-      <rect width="100" height="100" fill="black"/>
-      <circle cx="50" cy="41.445" r="11.8" fill="white"/>
-      <polygon points="39.228,46.261 50,70.355 60.772,46.261" fill="white"/>
-      <circle cx="50" cy="41.445" r="4.72" fill="black"/>
-    </mask>
-    <rect width="100" height="100" fill="currentColor" mask="url(#pin-mask-a)"/>
-    <g fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="butt">
-      <path d="M65.234,36.283 A20.5,20.5 0 0 1 65.234,63.717"/>
-      <path d="M71.774,30.394 A29.3,29.3 0 0 1 71.774,69.606"/>
-      <path d="M78.091,24.707 A37.8,37.8 0 0 1 78.091,75.293"/>
-      <path d="M34.766,36.283 A20.5,20.5 0 0 0 34.766,63.717"/>
-      <path d="M28.226,30.394 A29.3,29.3 0 0 0 28.226,69.606"/>
-      <path d="M21.909,24.707 A37.8,37.8 0 0 0 21.909,75.293"/>
-    </g>
-  </svg>
-  <a class="wordmark" href="/">CurbCues</a>
+  <a class="brand" href="./">
+    <img class="mark" src="assets/icon-512.png" width="300" height="300"
+         alt="CurbCues app icon: a map marker with sound radiating outward from it">
+    <span class="wordmark">CurbCues</span>
+  </a>
+  <p class="docversion">CurbCues documentation version: 20260802b</p>
   <nav aria-label="Primary">
     <a href="support/">Support</a>
     <a href="privacy/">Privacy</a>
@@ -168,7 +156,7 @@
 
 <footer class="wrap foot">
   <nav aria-label="Footer">
-    <a href="/">Home</a>
+    <a href="./">Home</a>
     <a href="support/">Support</a>
     <a href="privacy/">Privacy</a>
     <a href="https://tbaker.com">tbaker.com</a>
