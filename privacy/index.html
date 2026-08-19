@@ -34,7 +34,7 @@
   information returned by the app.</p>
 </aside>
   <h1 class="page-title">Privacy</h1>
-  <p class="updated">Last updated 3 August 2026</p>
+  <p class="updated">Last updated 17 August 2026</p>
 
   <div class="prose">
 
@@ -42,8 +42,8 @@
       <p>
         <strong>The short version.</strong> CurbCues has no account and no sign-up.
         It does not track you, show ads, or sell anything. Your location is used to
-        answer the question you pressed a button to ask, and it is not stored on any
-        server run by us.
+        answer the question you asked &mdash; by pressing a button or by asking Siri
+        &mdash; and it is not stored on any server run by us.
       </p>
     </div>
 
@@ -55,15 +55,34 @@
 
     <h2>How your location is used</h2>
     <p>
-      When you press a button, the app reads your location and compass heading from
-      your iPhone and uses them to look up an answer. That is the only reason
-      location is requested, and it happens only while you are using the app.
-      CurbCues does not use background location and does not record where you have
-      been.
+      When you press a button, or ask Siri, the app reads your location and compass
+      heading from your iPhone and uses them to look up an answer. That is the only
+      reason location is ever requested.
     </p>
     <p>
       Your location is not written to a file, a database, or a server that we
-      control. Once an announcement is spoken, the coordinates are gone.
+      control. Once an announcement is spoken, the coordinates are gone. CurbCues
+      does not record, log, or track where you have been.
+    </p>
+
+    <h3>Location while the app is not on screen</h3>
+    <p>
+      CurbCues declares the <strong>location</strong> and <strong>audio</strong>
+      background modes. This is what lets Siri answer &ldquo;what&rsquo;s my nearest
+      intersection in CurbCues&rdquo; while your phone is locked or in your pocket.
+      Without it, iOS stops delivering location to the app the moment it leaves the
+      screen, and the app cannot speak at all &mdash; which would make the Siri
+      feature useless for the people it is built for.
+    </p>
+    <p>
+      Location is read only to answer a request you made. The app does not follow
+      you in the background, and it does not collect location when you have not
+      asked it anything. iOS shows a blue indicator in the status bar whenever an
+      app is using your location while not on screen, so you can always tell.
+    </p>
+    <p>
+      The permission CurbCues asks for is <strong>While Using the App</strong>. It
+      does not request &ldquo;Always&rdquo; access.
     </p>
 
     <h2>Services the app talks to</h2>
@@ -74,7 +93,7 @@
 
     <h3>Apple</h3>
     <p>
-      The Address and Food Nearby buttons use Apple&rsquo;s geocoding and place search,
+      The Address and Food buttons use Apple&rsquo;s geocoding and place search,
       built into iOS. Apple&rsquo;s handling of those requests is governed by the
       <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.
     </p>
@@ -87,11 +106,20 @@
       <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation privacy policy</a>.
     </p>
 
+    <h3>Siri</h3>
+    <p>
+      If you ask Siri for your location through CurbCues, Apple processes the
+      spoken request. CurbCues receives only which of the three questions you
+      asked. Siri&rsquo;s own handling of your voice is covered by the
+      <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.
+      Answers are spoken by CurbCues itself rather than by Siri.
+    </p>
+
     <h2>What is stored on your iPhone</h2>
     <p>
-      Two settings are saved on your device so they survive a restart: your Live
-      update interval and your speech speed. They stay on the phone, are not sent
-      anywhere, and are deleted when you delete the app.
+      Two settings are saved on your device so they survive a restart: how often
+      repeated announcements are made, and your speech speed. They stay on the
+      phone, are not sent anywhere, and are deleted when you delete the app.
     </p>
 
     <h2>Children</h2>

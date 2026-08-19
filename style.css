@@ -343,3 +343,25 @@ h1, h2 { font-family: var(--display); letter-spacing: -0.025em; }
   font-weight: 800;
   letter-spacing: 0.01em;
 }
+
+/* Scope clarification. Quieter than .caution — this corrects an expectation
+   rather than warning about a hazard, so it should not compete with it. */
+.notnav {
+  border-left: 3px solid var(--tier-3);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  max-width: 46rem;
+}
+
+.notnav p {
+  margin: 0;
+  color: var(--tier-2);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.notnav strong {
+  font-family: var(--display);
+  font-weight: 800;
+  color: var(--paper);
+}
